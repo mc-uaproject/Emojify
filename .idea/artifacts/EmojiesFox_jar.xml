@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="EmojiesFox:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/EmojiesFox_jar</output-path>
+    <root id="archive" name="EmojiesFox.jar">
+      <element id="module-output" name="EmojiesFox" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/plugin.yml" />
+    </root>
+  </artifact>
+</component>
