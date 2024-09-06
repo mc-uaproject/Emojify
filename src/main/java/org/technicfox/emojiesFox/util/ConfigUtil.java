@@ -7,8 +7,8 @@ import org.bukkit.plugin.Plugin;
 import java.io.File;
 
 public class ConfigUtil {
-    private File file;
-    private FileConfiguration config;
+    private final File file;
+    private final FileConfiguration config;
 
     public ConfigUtil(Plugin plugin, String path) {
         this(plugin.getDataFolder().getAbsolutePath()+"/"+path);
@@ -25,8 +25,8 @@ public class ConfigUtil {
             return true;
         } catch (Exception e){
             e.printStackTrace();
-            return false;
         }
+        return false;
     }
 
     public File getFile() {

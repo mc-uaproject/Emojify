@@ -29,8 +29,8 @@ import java.util.UUID;
 
 
 public class CommandHandler implements Listener, CommandExecutor {
-    private String invName = "Панель Емодзі";
-    private ConfigUtil config;
+    private final String invName = "Панель Емодзі";
+    private final ConfigUtil config;
 
     public CommandHandler(EmojiesFox plugin, ConfigUtil configuration) {
         Bukkit.getPluginManager().registerEvents(this, plugin);
@@ -51,7 +51,7 @@ public class CommandHandler implements Listener, CommandExecutor {
 
             Toolkit toolkit = Toolkit.getDefaultToolkit();
             Clipboard clipboard = toolkit.getSystemClipboard();
-            StringSelection strSel = new StringSelection(data.get(0));
+            StringSelection strSel = new StringSelection(data.getFirst());
             clipboard.setContents(strSel, null);
 
             player.sendMessage(ChatColor.GREEN + "Скопійовано у буфер обміну");
