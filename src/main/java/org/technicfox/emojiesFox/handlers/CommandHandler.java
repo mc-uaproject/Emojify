@@ -57,7 +57,7 @@ public class CommandHandler implements Listener, CommandExecutor {
             player.sendMessage(ChatColor.GREEN + "Скопійовано у буфер обміну");
 
             player.closeInventory();
-        }catch (Exception ignored){}
+        }catch (Exception ignored){player.sendMessage(ChatColor.RED + "Ойо, щось пішло не так");}
 
 
         event.setCancelled(true);
@@ -80,15 +80,10 @@ public class CommandHandler implements Listener, CommandExecutor {
                 List<String> data = (List<String>) config.getConfig().getList("slot" + i);
                 inv.setItem(i, getHead(data.get(0), data.get(1)));
             }catch (Exception ignored){
-
+                player_who_sent_cmd.sendMessage(ChatColor.RED + "Ойо, щось пішло не так");
             }
-
         }
-
-
         player_who_sent_cmd.openInventory(inv);
-
-
         return true;
 
     }

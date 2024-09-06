@@ -1,9 +1,0 @@
-name: EmojiesFox
-version: '1.0-SNAPSHOT'
-main: org.technicfox.emojiesFox.EmojiesFox
-api-version: '1.21'
-commands:
-  emojis:
-    description: Panel for emojis
-    usage: /emojis
-    aliases: [emo, emoji, em]
