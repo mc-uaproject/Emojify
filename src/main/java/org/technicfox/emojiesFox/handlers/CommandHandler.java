@@ -57,7 +57,7 @@ public class CommandHandler implements Listener, CommandExecutor {
             player.sendMessage(ChatColor.GREEN + "Скопійовано у буфер обміну");
 
             player.closeInventory();
-        }catch (Exception ignored){player.sendMessage(ChatColor.RED + "Ойо, щось пішло не так");}
+        }catch (Exception ignored){}
 
 
         event.setCancelled(true);
@@ -76,7 +76,6 @@ public class CommandHandler implements Listener, CommandExecutor {
         Inventory inv = Bukkit.createInventory(player_who_sent_cmd, 9 * 3, invName);
         for (int i = 0; i < 27; i++) {
             try {
-                Bukkit.getLogger().info(String.valueOf(i));
                 List<String> data = (List<String>) config.getConfig().getList("slot" + i);
                 inv.setItem(i, getHead(data.get(0), data.get(1)));
             }catch (Exception ignored){

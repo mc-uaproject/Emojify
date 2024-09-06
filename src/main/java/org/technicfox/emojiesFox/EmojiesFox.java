@@ -14,11 +14,13 @@ public final class EmojiesFox extends JavaPlugin {
     public void onEnable() {
         saveDefaultConfig();
 
+
         ConfigUtil config = new ConfigUtil(this, "config.yml");
-        for (int i = 0; i < 27; i++){
-            config.getConfig().set("slot"+i , Arrays.asList("Default emote", "http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19"));
+        if (!config.getFile().exists()) {
+            config.getConfig().setDefaults(getConfig().getDefaults());
+            config.save();
         }
-        config.save();
+
 
 
         Bukkit.getLogger().info("Starting Emojies by TECHNICFOX");
