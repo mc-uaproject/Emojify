@@ -1,81 +1,123 @@
-slot0:
-  - ☺
-  - http://textures.minecraft.net/texture/4d8257956e3876da0af97a1117ed814b720b4d045fd52bed85f74113523eacb7
-slot1:
-  - ☹
-  - http://textures.minecraft.net/texture/38243241ca150e14149485c6f8409c1679f85b70aaf08438000ad410c2e7a31
-slot2:
-  - ☠
-  - http://textures.minecraft.net/texture/b0e094041b29b99f58cf5adff501baa7585e088335518bf62e41138ce2cb5168
-slot3:
-  - Default emote
-  - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
-slot4:
-  - Default emote
-  - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
-slot5:
-  - Default emote
-  - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
-slot6:
-  - Default emote
-  - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
-slot7:
-  - Default emote
-  - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
-slot8:
-  - Default emote
-  - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
-slot9:
-  - Default emote
-  - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
-slot10:
-  - Default emote
-  - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
-slot11:
-  - Default emote
-  - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
-slot12:
-  - Default emote
-  - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
-slot13:
-  - Default emote
-  - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
-slot14:
-  - Default emote
-  - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
-slot15:
-  - Default emote
-  - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
-slot16:
-  - Default emote
-  - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
-slot17:
-  - Default emote
-  - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
-slot18:
-  - Default emote
-  - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
-slot19:
-  - Default emote
-  - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
-slot20:
-  - Default emote
-  - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
-slot21:
-  - Default emote
-  - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
-slot22:
-  - Default emote
-  - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
-slot23:
-  - Default emote
-  - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
-slot24:
-  - Default emote
-  - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
-slot25:
-  - Default emote
-  - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
-slot26:
-  - Default emote
-  - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
+inventories:
+    slot0:
+      - Smiles  #name of the inventory
+      - http://textures.minecraft.net/texture/4d8257956e3876da0af97a1117ed814b720b4d045fd52bed85f74113523eacb7 #link to the player head texture
+    slot1:
+      - Hearts
+      - http://textures.minecraft.net/texture/2869bdd9a8f77eeff75d8f67ed0322bd9c16dd494972314ed707dd10a3139a58
+Hearts:
+  slot0:
+    - 媀 #red heart
+    - http://textures.minecraft.net/texture/2869bdd9a8f77eeff75d8f67ed0322bd9c16dd494972314ed707dd10a3139a58
+  slot1:
+    - 鬣 #orange heart
+    - http://textures.minecraft.net/texture/ff457bdb112c0011ba53180fe4b3d66fa010b3491a92b2456116a6767d81cfd8
+  slot2:
+    - 觮 #yellow heart
+    - http://textures.minecraft.net/texture/8aa915d0ae8df21ef605253326923706d82c995e99ecf708c6fb84cc39a05197
+  slot3:
+    - 継 #green heart
+    - http://textures.minecraft.net/texture/74077a0f7e6cf2224a12e4ca9b33aad07399652430c982124291f632981b3861
+  slot4:
+    - 佃 #light blue heart
+    - http://textures.minecraft.net/texture/48ca98fcc40e471595c1506059b1d0491293b9573fcd2bf82f1d5de41b97e2a1
+  slot5:
+    - 青 #blue heart
+    - http://textures.minecraft.net/texture/50048e8470c41612269fffe5e928282b769fb5a755d92789694609ca35d0ee67
+  slot6:
+    - 橙 #purple heart
+    - http://textures.minecraft.net/texture/75aa68b7f1b8d5bf84b780f4ee779516c38f5cba19d653712ed9e0d59696e856
+  slot7:
+    - 紫 #pink heart
+    - http://textures.minecraft.net/texture/73b4f3b3cef6817e71feb0da479425eb9d79f1efd5aeb5ad7c9e2616b124ce84
+  slot8:
+    - 梾 #lilac heart
+    - http://textures.minecraft.net/texture/cb6aca916272d9a10bbd8e039c1ac35b86fb06aa8bdae5899da3d6e3100ef65d
+  slot9:
+    - 白 #white heart
+    - http://textures.minecraft.net/texture/55dee831522f32738014a6d625b914cfeb9cfb55e0690157419d43f0c742c610
+  slot10:
+    - 黒 #black heart
+    - http://textures.minecraft.net/texture/13c0e4cd46ec1a53f646017d49c0661a0c120708a3363b378a40a2e6a2c1fba4
+Smiles:
+  slot0:
+    - ⿅ #smile
+    - http://textures.minecraft.net/texture/4d8257956e3876da0af97a1117ed814b720b4d045fd52bed85f74113523eacb7
+  slot1:
+    - ⽷ #sad face
+    - http://textures.minecraft.net/texture/38243241ca150e14149485c6f8409c1679f85b70aaf08438000ad410c2e7a31
+  slot2:
+    - 诮 #skull
+    - http://textures.minecraft.net/texture/b0e094041b29b99f58cf5adff501baa7585e088335518bf62e41138ce2cb5168
+  slot3:
+    - 挷 #clown
+    - http://textures.minecraft.net/texture/605a63e8dfb69e7bb89cfd8696d729061c5fe89b9a58deb75b6e4ca6181e319e
+  slot4:
+    - 瘛 #cold face
+    - http://textures.minecraft.net/texture/46a77dfed8297dc44dad6f29faf7277dfa98eafbb53fa66c7730a50e3818484b
+  slot5:
+    - 曻 #rage
+    - http://textures.minecraft.net/texture/4fb97b17c6395392658f32718aa46befa1c31d3572651c30f7d2bf3b93f6ead9
+  slot6:
+    - Default emote
+    - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
+  slot7:
+    - Default emote
+    - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
+  slot8:
+    - Default emote
+    - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
+  slot9:
+    - Default emote
+    - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
+  slot10:
+    - Default emote
+    - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
+  slot11:
+    - Default emote
+    - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
+  slot12:
+    - Default emote
+    - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
+  slot13:
+    - Default emote
+    - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
+  slot14:
+    - Default emote
+    - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
+  slot15:
+    - Default emote
+    - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
+  slot16:
+    - Default emote
+    - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
+  slot17:
+    - Default emote
+    - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
+  slot18:
+    - Default emote
+    - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
+  slot19:
+    - Default emote
+    - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
+  slot20:
+    - Default emote
+    - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
+  slot21:
+    - Default emote
+    - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
+  slot22:
+    - Default emote
+    - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
+  slot23:
+    - Default emote
+    - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
+  slot24:
+    - Default emote
+    - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
+  slot25:
+    - Default emote
+    - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
+  slot26:
+    - Default emote
+    - http://textures.minecraft.net/texture/5b1abe4a4acfc878cbb88ff1eb6d23b6fec94bfd9327ab11a6d929ca677a0a19
