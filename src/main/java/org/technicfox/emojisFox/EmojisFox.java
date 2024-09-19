@@ -1,34 +1,33 @@
-package org.technicfox.emojiesFox;
+package org.technicfox.emojisFox;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.technicfox.emojiesFox.listeners.MenuListener;
-import org.technicfox.emojiesFox.menusystem.PlayerMenuUtility;
-import org.technicfox.emojiesFox.handlers.CommandHandler;
-import org.technicfox.emojiesFox.util.ConfigUtil;
+import org.technicfox.emojisFox.listeners.MenuListener;
+import org.technicfox.emojisFox.menusystem.PlayerMenuUtility;
+import org.technicfox.emojisFox.listeners.CommandListener;
+import org.technicfox.emojisFox.util.ConfigUtil;
 
 import java.util.HashMap;
 
 
-public final class EmojiesFox extends JavaPlugin implements Listener {
-    private static EmojiesFox plugin;
+public final class EmojisFox extends JavaPlugin implements Listener {
+    private static ConfigUtil config;
     private static final HashMap<Player, PlayerMenuUtility> playerMenuUtilityMap = new HashMap<>();
     @Override
-    public void onEnable() {
-        plugin = this;
 
+    public void onEnable() {
         saveDefaultConfig();
-        ConfigUtil config = new ConfigUtil(this, "config.yml");
+        config = new ConfigUtil(this, "config.yml");
         if (!config.getFile().exists()) {
             config.getConfig().setDefaults(getConfig().getDefaults());
             config.save();
         }
 
 
-        Bukkit.getLogger().info("Starting Emojies by TECHNICFOX");
-        this.getCommand("emojis").setExecutor(new CommandHandler());
+        Bukkit.getLogger().info("Starting Emojis by TECHNICFOX");
+        this.getCommand("emojis").setExecutor(new CommandListener());
         getServer().getPluginManager().registerEvents(new MenuListener(), this);
 
 
@@ -36,8 +35,7 @@ public final class EmojiesFox extends JavaPlugin implements Listener {
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
-        Bukkit.getLogger().info("Ending Emojies by TECHNICFOX");
+        Bukkit.getLogger().info("Ending Emojis by TECHNICFOX");
     }
 
     /**
@@ -50,7 +48,7 @@ public final class EmojiesFox extends JavaPlugin implements Listener {
     public static PlayerMenuUtility getPlayerMenuUtility(Player p) {
         PlayerMenuUtility playerMenuUtility;
         if (!(playerMenuUtilityMap.containsKey(p))) {
-            playerMenuUtility = new PlayerMenuUtility(p, new ConfigUtil(getPlugin(), "config.yml"));
+            playerMenuUtility = new PlayerMenuUtility(p);
             playerMenuUtilityMap.put(p, playerMenuUtility);
 
             return playerMenuUtility;
@@ -58,8 +56,7 @@ public final class EmojiesFox extends JavaPlugin implements Listener {
             return playerMenuUtilityMap.get(p);
         }
     }
-
-    public static EmojiesFox getPlugin() {
-        return plugin;
+    public static ConfigUtil getConfigUtil(){
+        return config;
     }
 }

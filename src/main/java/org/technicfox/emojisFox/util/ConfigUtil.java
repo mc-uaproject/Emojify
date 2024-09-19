@@ -1,5 +1,6 @@
-package org.technicfox.emojiesFox.util;
+package org.technicfox.emojisFox.util;
 
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
@@ -19,14 +20,12 @@ public class ConfigUtil {
         this.config = YamlConfiguration.loadConfiguration(this.file);
     }
 
-    public boolean save(){
+    public void save(){
         try {
             this.config.save(this.file);
-            return true;
         } catch (Exception e){
-            e.printStackTrace();
+            Bukkit.getLogger().warning("Error saving config: " + e.getMessage());
         }
-        return false;
     }
 
     public File getFile() {

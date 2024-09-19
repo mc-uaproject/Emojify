@@ -1,60 +1,68 @@
 inventories:
+    defaultMenuConfig:
+      invName: "&f七七七七七七七七ㇺ" #name of the inventory
+      slots: 54
     slot0:
-      name: Smiles  #name of the inventory
+      name: "Smiles"  #name of the item in the inventory
+      invName: "&f七七七七七七七七ㇺ"
+      slots: 54\
       id: 1
     slot1:
-      name: Hearts
+      name: "Hearts"
+      invName: "&f七七七七七七七七ㇺ"
+      slots: 54
       id: 101
-Hearts:
+slot0:
   slot0:
-    name: 媀 #red heart
-    id: 101
-  slot1:
-    name: 鬣 #orange heart
-    id: 102
-  slot2:
-    name: 觮 #yellow heart
-    id: 103
-  slot3:
-    name: 継 #green heart
-    id: 104
-  slot4:
-    name: 佃 #light blue heart
-    id: 105
-  slot5:
-    name: 青 #blue heart
-    id: 106
-  slot6:
-    name: 橙 #purple heart
-    id: 107
-  slot7:
-    name: 紫 #pink heart
-    id: 108
-  slot8:
-    name: 梾 #lilac heart
-    id: 109
-  slot9:
-    name: 白 #white heart
-    id: 110
-  slot10:
-    name: 黒 #black heart
-    id: 111
-Smiles:
-  slot0:
-    name: ⿅ #smile
+    name: "⿅" #smile
     id: 1
   slot1:
-    name: ⽷ #sad face
+    name: "⽷" #sad face
     id: 2
   slot2:
-    name: 诮 #skull
+    name: "诮" #skull
     id: 3
   slot3:
-    name: 挷 #clown
+    name: "挷" #clown
     id: 4
   slot4:
-    name: 瘛 #cold face
+    name: "瘛" #cold face
     id: 5
   slot5:
-    name: 曻 #rage
+    name: "曻" #rage
     id: 6
+slot1:
+  slot0:
+    name: "媀" #red heart
+    id: 101
+  slot1:
+    name: "鬣" #orange heart
+    id: 102
+  slot2:
+    name: "觮" #yellow heart
+    id: 103
+  slot3:
+    name: "継" #green heart
+    id: 104
+  slot4:
+    name: "佃" #light blue heart
+    id: 105
+  slot5:
+    name: "青" #blue heart
+    id: 106
+  slot6:
+    name: "橙" #purple heart
+    id: 107
+  slot7:
+    name: "紫" #pink heart
+    id: 108
+  slot8:
+    name: "梾" #lilac heart
+    id: 109
+  slot9:
+    name: "白" #white heart
+    id: 110
+  slot10:
+    name: "黒" #black heart
+    id: 111
+

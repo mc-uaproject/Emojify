@@ -1,19 +1,16 @@
-package org.technicfox.emojiesFox.handlers;
-
-
+package org.technicfox.emojisFox.listeners;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
-import org.technicfox.emojiesFox.EmojiesFox;
-import org.technicfox.emojiesFox.menusystem.menu.EmojiHomePage;
+import org.technicfox.emojisFox.EmojisFox;
+import org.technicfox.emojisFox.menusystem.menu.EmojiHomePage;
 
 
 
 
-public class CommandHandler implements CommandExecutor {
+public class CommandListener implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
@@ -21,8 +18,7 @@ public class CommandHandler implements CommandExecutor {
             return false;
         }
 
-        Player player = (Player) sender;
-        new EmojiHomePage(EmojiesFox.getPlayerMenuUtility(player)).open();
+        new EmojiHomePage(EmojisFox.getPlayerMenuUtility((Player) sender)).open();
         return true;
     }
 

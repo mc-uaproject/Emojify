@@ -1,4 +1,4 @@
-package org.technicfox.emojiesFox.menusystem;
+package org.technicfox.emojisFox.menusystem;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -7,8 +7,6 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-
-import java.util.Arrays;
 
 public abstract class Menu implements InventoryHolder {
 
