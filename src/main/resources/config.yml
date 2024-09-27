@@ -6,39 +6,39 @@ inventories:
     name: "&b&lHearts"  #name of the item in the main inventory
     invName: "&f七七七七七七七七ㇺ" #Can be used for custom menu. 七 - is a negative space symbol used to align the menu. &f - is a color code (without it your custom menu will be dark).
     slots: 54 #Number of slots in the inventory. IT HAS TO BE A MULTIPLE OF 9.
-    id: 1 #id of the custom item
+    id: 101 #id of the custom item
 
 slot0:
   slot0:
     name: "媀" #custom character that can be changed into an emoji
     id: 101 #id of the custom item
   slot1:
-    name: "鬣" #orange heart
+    name: "鬣"
     id: 102
   slot2:
-    name: "觮" #yellow heart
+    name: "觮"
     id: 103
   slot3:
-    name: "継" #green heart
+    name: "継"
     id: 104
   slot4:
-    name: "佃" #light blue heart
+    name: "佃"
     id: 105
   slot5:
-    name: "青" #blue heart
+    name: "青"
     id: 106
   slot6:
-    name: "橙" #purple heart
+    name: "橙"
     id: 107
   slot7:
-    name: "紫" #pink heart
+    name: "紫"
     id: 108
   slot8:
-    name: "梾" #lilac heart
+    name: "梾"
     id: 109
   slot9:
-    name: "白" #white heart
+    name: "白"
     id: 110
   slot10:
-    name: "黒" #black heart
+    name: "黒"
     id: 111
