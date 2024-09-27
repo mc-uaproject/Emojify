@@ -1,11 +1,11 @@
-package org.technicfox.emojisFox.listeners;
+package org.technicfox.emojify.listeners;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.InventoryHolder;
-import org.technicfox.emojisFox.menusystem.Menu;
+import org.technicfox.emojify.menusystem.Menu;
 
 public class MenuListener implements Listener {
 

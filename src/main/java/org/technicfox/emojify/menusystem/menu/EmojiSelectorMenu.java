@@ -1,4 +1,4 @@
-package org.technicfox.emojisFox.menusystem.menu;
+package org.technicfox.emojify.menusystem.menu;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -7,9 +7,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.technicfox.emojisFox.EmojisFox;
-import org.technicfox.emojisFox.menusystem.Menu;
-import org.technicfox.emojisFox.menusystem.PlayerMenuUtility;
+import org.technicfox.emojify.Emojify;
+import org.technicfox.emojify.menusystem.Menu;
+import org.technicfox.emojify.menusystem.PlayerMenuUtility;
 
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
@@ -24,7 +24,7 @@ public class EmojiSelectorMenu extends Menu {
     @Override
     public String getMenuName() {
         try {
-            String name = ChatColor.translateAlternateColorCodes('&',EmojisFox.getConfigUtil().getConfig().getString("inventories."+this.playerMenuUtility.getEmojiSlot()+".invName"));
+            String name = ChatColor.translateAlternateColorCodes('&', Emojify.getConfigUtil().getConfig().getString("inventories."+this.playerMenuUtility.getEmojiSlot()+".invName"));
             return name;
         }catch (Exception e){
             Bukkit.getLogger().severe("Error loading name of emoji menu: " + e.getMessage());
@@ -35,7 +35,7 @@ public class EmojiSelectorMenu extends Menu {
     @Override
     public int getSlots() {
         try{
-            return EmojisFox.getConfigUtil().getConfig().getInt( "inventories."+this.playerMenuUtility.getEmojiSlot()+".slots");
+            return Emojify.getConfigUtil().getConfig().getInt( "inventories."+this.playerMenuUtility.getEmojiSlot()+".slots");
         }catch (Exception e){
             Bukkit.getLogger().severe("Error loading number of slots in one of emoji menus. Setting to 54: " + e.getMessage());
         }
@@ -45,7 +45,7 @@ public class EmojiSelectorMenu extends Menu {
     @Override
     public void handleMenu(InventoryClickEvent event) {
         if (event.getSlot() == getSlots()-1){
-            new EmojiHomeMenu(EmojisFox.getPlayerMenuUtility((Player) event.getWhoClicked())).open();
+            new EmojiHomeMenu(Emojify.getPlayerMenuUtility((Player) event.getWhoClicked())).open();
             return;
         }
         if (!Objects.requireNonNull(event.getCurrentItem()).getType().equals(Material.WOODEN_AXE)) return;
@@ -65,8 +65,8 @@ public class EmojiSelectorMenu extends Menu {
     public void setMenuItems() {
         try {
             for (int i = 0; i < getSlots()-1; i++) {
-                this.inventory.setItem(i, getEmoji(EmojisFox.getConfigUtil().getConfig().getInt(this.playerMenuUtility.getEmojiSlot()+".slot"+i+".id"),
-                        EmojisFox.getConfigUtil().getConfig().getString(this.playerMenuUtility.getEmojiSlot()+".slot"+i+".name"),true));
+                this.inventory.setItem(i, getEmoji(Emojify.getConfigUtil().getConfig().getInt(this.playerMenuUtility.getEmojiSlot()+".slot"+i+".id"),
+                        Emojify.getConfigUtil().getConfig().getString(this.playerMenuUtility.getEmojiSlot()+".slot"+i+".name"),true));
             }
             ItemStack exit = new ItemStack(Material.MAP);
             ItemMeta meta = exit.getItemMeta();

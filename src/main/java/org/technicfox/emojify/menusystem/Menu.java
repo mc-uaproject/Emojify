@@ -1,4 +1,4 @@
-package org.technicfox.emojisFox.menusystem;
+package org.technicfox.emojify.menusystem;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
