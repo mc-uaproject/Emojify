@@ -1,18 +1,18 @@
-package org.technicfox.emojisFox;
+package org.technicfox.emojify;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.technicfox.emojisFox.listeners.MenuListener;
-import org.technicfox.emojisFox.menusystem.PlayerMenuUtility;
-import org.technicfox.emojisFox.listeners.CommandListener;
-import org.technicfox.emojisFox.util.ConfigUtil;
+import org.technicfox.emojify.listeners.MenuListener;
+import org.technicfox.emojify.menusystem.PlayerMenuUtility;
+import org.technicfox.emojify.listeners.CommandListener;
+import org.technicfox.emojify.util.ConfigUtil;
 
 import java.util.HashMap;
 
 
-public final class EmojisFox extends JavaPlugin implements Listener {
+public final class Emojify extends JavaPlugin implements Listener {
     private static ConfigUtil config;
     private static final HashMap<Player, PlayerMenuUtility> playerMenuUtilityMap = new HashMap<>();
 

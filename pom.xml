@@ -5,13 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.technicfox</groupId>
-    <artifactId>EmojiesFox</artifactId>
+    <artifactId>Emojify</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 
 
 
-    <name>EmojisFox</name>
+    <name>Emojify</name>
 
     <properties>
         <java.version>21</java.version>

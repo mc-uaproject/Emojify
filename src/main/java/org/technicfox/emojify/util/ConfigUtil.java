@@ -1,4 +1,4 @@
-package org.technicfox.emojisFox.util;
+package org.technicfox.emojify.util;
 
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;

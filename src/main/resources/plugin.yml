@@ -1,6 +1,6 @@
-name: EmojisFox
+name: Emojify
 version: '1.0'
-main: org.technicfox.emojisFox.EmojisFox
+main: org.technicfox.emojify.Emojify
 api-version: '1.21'
 commands:
   emojis:

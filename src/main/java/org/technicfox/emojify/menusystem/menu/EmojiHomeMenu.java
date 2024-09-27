@@ -1,4 +1,4 @@
-package org.technicfox.emojisFox.menusystem.menu;
+package org.technicfox.emojify.menusystem.menu;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -7,9 +7,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.technicfox.emojisFox.EmojisFox;
-import org.technicfox.emojisFox.menusystem.Menu;
-import org.technicfox.emojisFox.menusystem.PlayerMenuUtility;
+import org.technicfox.emojify.Emojify;
+import org.technicfox.emojify.menusystem.Menu;
+import org.technicfox.emojify.menusystem.PlayerMenuUtility;
 
 import java.util.Objects;
 
@@ -22,7 +22,7 @@ public class EmojiHomeMenu extends Menu {
     @Override
     public String getMenuName() {
         try {
-            String name = ChatColor.translateAlternateColorCodes('&',EmojisFox.getConfigUtil().getConfig().getString("inventories.MainMenuConfig.invName"));
+            String name = ChatColor.translateAlternateColorCodes('&', Emojify.getConfigUtil().getConfig().getString("inventories.MainMenuConfig.invName"));
             return name;
         }catch (Exception e){
             Bukkit.getLogger().severe("Error loading name of main menu: " + e.getMessage());
@@ -33,7 +33,7 @@ public class EmojiHomeMenu extends Menu {
     @Override
     public int getSlots() {
         try{
-            return EmojisFox.getConfigUtil().getConfig().getInt("inventories.MainMenuConfig.slots");
+            return Emojify.getConfigUtil().getConfig().getInt("inventories.MainMenuConfig.slots");
         }catch (Exception e){
             Bukkit.getLogger().severe("Error loading number of slots in the main menu. Setting to 54: " + e.getMessage());
         }
@@ -48,10 +48,10 @@ public class EmojiHomeMenu extends Menu {
         }
         if (!Objects.requireNonNull(event.getCurrentItem()).getType().equals(Material.WOODEN_AXE)) return;
         try {
-            String data = EmojisFox.getConfigUtil().getConfig().getString("inventories.slot"+event.getSlot()+".name");
+            String data = Emojify.getConfigUtil().getConfig().getString("inventories.slot"+event.getSlot()+".name");
             if (data == null) Bukkit.getLogger().warning("Error loading name of the item in slot " + event.getSlot());
-            EmojisFox.getPlayerMenuUtility((Player) event.getWhoClicked()).setEmojiSlot("slot"+event.getSlot());
-            new EmojiSelectorMenu(EmojisFox.getPlayerMenuUtility((Player) event.getWhoClicked())).open();
+            Emojify.getPlayerMenuUtility((Player) event.getWhoClicked()).setEmojiSlot("slot"+event.getSlot());
+            new EmojiSelectorMenu(Emojify.getPlayerMenuUtility((Player) event.getWhoClicked())).open();
 
         }catch (Exception e){
             Bukkit.getLogger().severe("Error loading name of main menu: " + e.getMessage());
@@ -63,8 +63,8 @@ public class EmojiHomeMenu extends Menu {
     public void setMenuItems() {
         try {
             for (int i = 0; i < getSlots()-1; i++) {
-                this.inventory.setItem(i, getEmoji(EmojisFox.getConfigUtil().getConfig().getInt("inventories.slot" + i + ".id"),
-                        EmojisFox.getConfigUtil().getConfig().getString("inventories.slot" + i + ".name"), false));
+                this.inventory.setItem(i, getEmoji(Emojify.getConfigUtil().getConfig().getInt("inventories.slot" + i + ".id"),
+                        Emojify.getConfigUtil().getConfig().getString("inventories.slot" + i + ".name"), false));
             }
             ItemStack exit = new ItemStack(Material.MAP);
             ItemMeta meta = exit.getItemMeta();
