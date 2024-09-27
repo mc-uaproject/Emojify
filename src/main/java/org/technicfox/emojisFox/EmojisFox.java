@@ -15,8 +15,8 @@ import java.util.HashMap;
 public final class EmojisFox extends JavaPlugin implements Listener {
     private static ConfigUtil config;
     private static final HashMap<Player, PlayerMenuUtility> playerMenuUtilityMap = new HashMap<>();
-    @Override
 
+    @Override
     public void onEnable() {
         saveDefaultConfig();
         config = new ConfigUtil(this, "config.yml");

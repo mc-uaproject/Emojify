@@ -1,5 +1,5 @@
 name: EmojisFox
-version: '1.0-SNAPSHOT'
+version: '1.0'
 main: org.technicfox.emojisFox.EmojisFox
 api-version: '1.21'
 commands:

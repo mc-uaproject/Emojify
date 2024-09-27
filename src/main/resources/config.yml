@@ -1,36 +1,58 @@
 inventories:
-    defaultMenuConfig:
-      invName: "&f七七七七七七七七ㇺ" #name of the inventory
-      slots: 54
-    slot0:
-      name: "Smiles"  #name of the item in the inventory
-      invName: "&f七七七七七七七七ㇺ"
-      slots: 54\
-      id: 1
-    slot1:
-      name: "Hearts"
-      invName: "&f七七七七七七七七ㇺ"
-      slots: 54
-      id: 101
+  MainMenuConfig:
+    invName: "&f七七七七七七七七ㇺ" #Can be used for custom menu. 七 - is a negative space symbol used to align the menu. &f - is a color code (without it your custom menu will be dark).
+    slots: 54 #Number of slots in the inventory. IT HAS TO BE A MULTIPLE OF 9.
+  slot0:
+    name: "&b&lSmiles"  #name of the item in the main inventory
+    invName: "&f七七七七七七七七ㇺ"
+    slots: 54
+    id: 1 #id of the custom item
+  slot1:
+    name: "&b&lHearts"
+    invName: "&f七七七七七七七七ㇺ"
+    slots: 54
+    id: 101
+  slot2:
+    name: "&b&lЕмоції з діскорду (1/2)"
+    invName: "&f七七七七七七七七ㇺ"
+    slots: 54
+    id: 201
+  slot3:
+    name: "&b&lЕмоції з діскорду (2/2)"
+    invName: "&f七七七七七七七七ㇺ"
+    slots: 54
+    id: 201
+  slot4:
+    name: "&b&lЕмоції з діскорду [АРХІВ] (1/2)"
+    invName: "&f七七七七七七七七ㇺ"
+    slots: 54
+    id: 201
+  slot5:
+    name: "&b&lЕмоції з діскорду [АРХІВ] (2/2)"
+    invName: "&f七七七七七七七七ㇺ"
+    slots: 54
+    id: 201
 slot0:
   slot0:
-    name: "⿅" #smile
-    id: 1
+    name: "⿅" #custom character that can be changed into an emoji
+    id: 1 #id of the custom item
   slot1:
-    name: "⽷" #sad face
+    name: "⽷"
     id: 2
   slot2:
-    name: "诮" #skull
+    name: "诮"
     id: 3
   slot3:
-    name: "挷" #clown
+    name: "挷"
     id: 4
   slot4:
-    name: "瘛" #cold face
+    name: "瘛"
     id: 5
   slot5:
-    name: "曻" #rage
+    name: "曻"
     id: 6
+
+
 slot1:
   slot0:
     name: "媀" #red heart
@@ -65,4 +87,577 @@ slot1:
   slot10:
     name: "黒" #black heart
     id: 111
-
+slot2:
+  slot0:
+    name: 噸
+    id: 201
+  slot1:
+    name: 溫
+    id: 202
+  slot2:
+    name: 觀
+    id: 203
+  slot3:
+    name: 岬
+    id: 204
+  slot4:
+    name: 袪
+    id: 205
+  slot5:
+    name: 徨
+    id: 206
+  slot6:
+    name: 闈
+    id: 207
+  slot7:
+    name: 俨
+    id: 208
+  slot8:
+    name: 鐬
+    id: 209
+  slot9:
+    name: 蘺
+    id: 210
+  slot10:
+    name: 譕
+    id: 211
+  slot11:
+    name: 锇
+    id: 212
+  slot12:
+    name: 晥
+    id: 213
+  slot13:
+    name: 鰚
+    id: 214
+  slot14:
+    name: 蜞
+    id: 215
+  slot15:
+    name: 侶
+    id: 216
+  slot16:
+    name: 憓
+    id: 217
+  slot17:
+    name: 讨
+    id: 218
+  slot18:
+    name: 锵
+    id: 219
+  slot19:
+    name: 僵
+    id: 220
+  slot20:
+    name: 璛
+    id: 221
+  slot21:
+    name: 郫
+    id: 222
+  slot22:
+    name: 唥
+    id: 223
+  slot23:
+    name: 萰
+    id: 224
+  slot24:
+    name: 铸
+    id: 225
+  slot25:
+    name: 勈
+    id: 226
+  slot26:
+    name: 嬛
+    id: 227
+  slot27:
+    name: 醹
+    id: 228
+  slot28:
+    name: 撖
+    id: 229
+  slot29:
+    name: 怃
+    id: 230
+  slot30:
+    name: 援
+    id: 231
+  slot31:
+    name: 絇
+    id: 232
+  slot32:
+    name: 魲
+    id: 233
+  slot33:
+    name: 薣
+    id: 234
+  slot34:
+    name: 礎
+    id: 235
+  slot35:
+    name: 滍
+    id: 236
+  slot36:
+    name: 佨
+    id: 237
+  slot37:
+    name: 蕕
+    id: 238
+  slot38:
+    name: 呍
+    id: 239
+  slot39:
+    name: 噳
+    id: 240
+  slot40:
+    name: 擩
+    id: 241
+  slot41:
+    name: 呺
+    id: 242
+  slot42:
+    name: 鞂
+    id: 243
+  slot43:
+    name: 莭
+    id: 244
+  slot44:
+    name: 榴
+    id: 245
+  slot45:
+    name: 渢
+    id: 246
+  slot46:
+    name: 笇
+    id: 247
+  slot47:
+    name: 縨
+    id: 248
+  slot48:
+    name: 齜
+    id: 249
+  slot49:
+    name: 踞
+    id: 250
+  slot50:
+    name: 椽
+    id: 251
+  slot51:
+    name: 職
+    id: 252
+  slot52:
+    name: 墿
+    id: 253
+slot3:
+  slot0:
+    name: 暥
+    id: 254
+  slot1:
+    name: 私
+    id: 255
+  slot2:
+    name: 讲
+    id: 256
+  slot3:
+    name: 臗
+    id: 257
+  slot4:
+    name: 躵
+    id: 258
+  slot5:
+    name: 曜
+    id: 259
+  slot6:
+    name: 榃
+    id: 260
+  slot7:
+    name: 毧
+    id: 261
+  slot8:
+    name: 趘
+    id: 262
+  slot9:
+    name: 棨
+    id: 263
+  slot10:
+    name: 妻
+    id: 264
+  slot11:
+    name: 扅
+    id: 265
+  slot12:
+    name: 婞
+    id: 266
+  slot13:
+    name: 旝
+    id: 267
+  slot14:
+    name: 螄
+    id: 268
+  slot15:
+    name: 梨
+    id: 269
+  slot16:
+    name: 甗
+    id: 270
+  slot17:
+    name: 杪
+    id: 271
+  slot18:
+    name: 俇
+    id: 272
+  slot19:
+    name: 鿟
+    id: 273
+  slot20:
+    name: 鉶
+    id: 274
+  slot21:
+    name: 蟪
+    id: 275
+  slot22:
+    name: 侂
+    id: 276
+  slot23:
+    name: 湶
+    id: 277
+  slot24:
+    name: 儲
+    id: 278
+  slot25:
+    name: 硁
+    id: 279
+  slot26:
+    name: 訡
+    id: 280
+  slot27:
+    name: 澷
+    id: 281
+  slot28:
+    name: 稖
+    id: 282
+  slot29:
+    name: 氡
+    id: 283
+  slot30:
+    name: 鑆
+    id: 284
+  slot31:
+    name: 詟
+    id: 285
+  slot32:
+    name: 湄
+    id: 286
+  slot33:
+    name: 俪
+    id: 287
+  slot34:
+    name: 篑
+    id: 288
+  slot35:
+    name: 袥
+    id: 289
+  slot36:
+    name: 兮
+    id: 290
+  slot37:
+    name: 鶄
+    id: 291
+  slot38:
+    name: 兜
+    id: 292
+  slot39:
+    name: 群
+    id: 293
+slot4:
+  slot0:
+    name: 複
+    id: 301
+  slot1:
+    name: 弛
+    id: 302
+  slot2:
+    name: 庞
+    id: 303
+  slot3:
+    name: 魴
+    id: 304
+  slot4:
+    name: 靁
+    id: 305
+  slot5:
+    name: 迗
+    id: 306
+  slot6:
+    name: 坳
+    id: 307
+  slot7:
+    name: 侎
+    id: 308
+  slot8:
+    name: 怭
+    id: 309
+  slot9:
+    name: 鰾
+    id: 310
+  slot10:
+    name: 骂
+    id: 311
+  slot11:
+    name: 挢
+    id: 312
+  slot12:
+    name: 儈
+    id: 313
+  slot13:
+    name: 鿂
+    id: 314
+  slot14:
+    name: 趀
+    id: 315
+  slot15:
+    name: 蠺
+    id: 316
+  slot16:
+    name: 糐
+    id: 317
+  slot17:
+    name: 骑
+    id: 318
+  slot18:
+    name: 詖
+    id: 319
+  slot19:
+    name: 晕
+    id: 320
+  slot20:
+    name: 岹
+    id: 321
+  slot21:
+    name: 榍
+    id: 322
+  slot22:
+    name: 消
+    id: 323
+  slot23:
+    name: 鰌
+    id: 324
+  slot24:
+    name: 邭
+    id: 325
+  slot25:
+    name: 烱
+    id: 326
+  slot26:
+    name: 簤
+    id: 327
+  slot27:
+    name: 鴣
+    id: 328
+  slot28:
+    name: 虄
+    id: 329
+  slot29:
+    name: 蜑
+    id: 330
+  slot30:
+    name: 沲
+    id: 331
+  slot31:
+    name: 稕
+    id: 332
+  slot32:
+    name: 顪
+    id: 333
+  slot33:
+    name: 棌
+    id: 334
+  slot34:
+    name: 麸
+    id: 335
+  slot35:
+    name: 嗪
+    id: 336
+  slot36:
+    name: 饠
+    id: 337
+  slot37:
+    name: 鳀
+    id: 338
+  slot38:
+    name: 鲴
+    id: 339
+  slot39:
+    name: 栫
+    id: 340
+  slot40:
+    name: 秙
+    id: 341
+  slot41:
+    name: 骎
+    id: 342
+  slot42:
+    name: 鴳
+    id: 343
+  slot43:
+    name: 犚
+    id: 344
+  slot44:
+    name: 遻
+    id: 345
+  slot45:
+    name: 亳
+    id: 346
+  slot46:
+    name: 复
+    id: 347
+  slot47:
+    name: 蓋
+    id: 348
+  slot48:
+    name: 袅
+    id: 349
+  slot49:
+    name: 鋬
+    id: 350
+  slot50:
+    name: 麖
+    id: 351
+  slot51:
+    name: 項
+    id: 352
+  slot52:
+    name: 諥
+    id: 353
+slot5:
+  slot0:
+    name: 癗
+    id: 354
+  slot1:
+    name: 泘
+    id: 355
+  slot2:
+    name: 荽
+    id: 356
+  slot3:
+    name: 柒
+    id: 357
+  slot4:
+    name: 写
+    id: 358
+  slot5:
+    name: 籩
+    id: 359
+  slot6:
+    name: 噁
+    id: 360
+  slot7:
+    name: 巊
+    id: 361
+  slot8:
+    name: 窎
+    id: 362
+  slot9:
+    name: 蟹
+    id: 363
+  slot10:
+    name: 切
+    id: 364
+  slot11:
+    name: 賿
+    id: 365
+  slot12:
+    name: 锽
+    id: 366
+  slot13:
+    name: 冁
+    id: 367
+  slot14:
+    name: 福
+    id: 368
+  slot15:
+    name: 扯
+    id: 369
+  slot16:
+    name: 篏
+    id: 370
+  slot17:
+    name: 麑
+    id: 371
+  slot18:
+    name: 购
+    id: 372
+  slot19:
+    name: 萍
+    id: 373
+  slot20:
+    name: 曰
+    id: 374
+  slot21:
+    name: 駐
+    id: 375
+  slot22:
+    name: 夆
+    id: 376
+  slot23:
+    name: 鲰
+    id: 377
+  slot24:
+    name: 葈
+    id: 378
+  slot25:
+    name: 萗
+    id: 379
+  slot26:
+    name: 距
+    id: 380
+  slot27:
+    name: 勴
+    id: 381
+  slot28:
+    name: 崮
+    id: 382
+  slot29:
+    name: 肉
+    id: 383
+  slot30:
+    name: 噪
+    id: 384
+  slot31:
+    name: 细
+    id: 385
+  slot32:
+    name: 耫
+    id: 386
+  slot33:
+    name: 钜
+    id: 387
+  slot34:
+    name: 緎
+    id: 388
+  slot35:
+    name: 累
+    id: 389
+  slot36:
+    name: 瞦
+    id: 390
+  slot37:
+    name: 苜
+    id: 391
+  slot38:
+    name: 羍
+    id: 392
+  slot39:
+    name: 猝
+    id: 393
+  slot40:
+    name: 缤
+    id: 394
+  slot41:
+    name: 黲
+    id: 395
+  slot42:
+    name: 峿
+    id: 396
+  slot43:
+    name: 戉
+    id: 397
