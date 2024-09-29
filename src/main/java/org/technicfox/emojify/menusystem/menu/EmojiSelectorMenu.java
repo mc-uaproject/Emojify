@@ -29,7 +29,7 @@ public class EmojiSelectorMenu extends Menu {
         }catch (Exception e){
             Bukkit.getLogger().severe("Error loading name of emoji menu: " + e.getMessage());
         }
-        return "Oops! Something went wrong! Please contact the developer.";
+        return "Щось пішло не так! Перевірте конфігурацію!";
     }
 
     @Override
