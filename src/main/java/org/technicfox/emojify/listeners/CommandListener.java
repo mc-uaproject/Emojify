@@ -14,7 +14,7 @@ public class CommandListener implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage("Тільки гравці можуть користуватися цією командою");
+            sender.sendMessage("Only players can use this command!");
             return false;
         }
 

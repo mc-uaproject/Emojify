@@ -69,7 +69,7 @@ public class EmojiHomeMenu extends Menu {
             ItemStack exit = new ItemStack(Material.MAP);
             ItemMeta meta = exit.getItemMeta();
             meta.setCustomModelData(1010);
-            meta.setItemName("§c§lВийти");
+            meta.setItemName("§c§lExit");
             exit.setItemMeta(meta);
             this.inventory.setItem(getSlots()-1, exit);
         }catch (Exception e){

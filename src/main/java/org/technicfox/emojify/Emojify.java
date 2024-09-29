@@ -18,6 +18,8 @@ public final class Emojify extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
+        Bukkit.getLogger().info("Starting Emojify by TECHNICFOX");
+
         saveDefaultConfig();
         config = new ConfigUtil(this, "config.yml");
         if (!config.getFile().exists()) {
@@ -25,17 +27,10 @@ public final class Emojify extends JavaPlugin implements Listener {
             config.save();
         }
 
-
-        Bukkit.getLogger().info("Starting Emojis by TECHNICFOX");
         this.getCommand("emojis").setExecutor(new CommandListener());
         getServer().getPluginManager().registerEvents(new MenuListener(), this);
 
 
-    }
-
-    @Override
-    public void onDisable() {
-        Bukkit.getLogger().info("Ending Emojis by TECHNICFOX");
     }
 
     /**

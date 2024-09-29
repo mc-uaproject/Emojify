@@ -55,7 +55,7 @@ public class EmojiSelectorMenu extends Menu {
             StringSelection strSel = new StringSelection(event.getCurrentItem().getItemMeta().getItemName());
             clipboard.setContents(strSel, null);
             event.getWhoClicked().closeInventory();
-            event.getWhoClicked().sendMessage(ChatColor.GREEN + "Скопійовано у буфер обміну");
+            event.getWhoClicked().sendMessage(ChatColor.GREEN + "Copied to clipboard!");
         }catch (Exception e){
             Bukkit.getLogger().severe("Error getting emoji in a menu: " + e.getMessage());
         }
@@ -71,7 +71,7 @@ public class EmojiSelectorMenu extends Menu {
             ItemStack exit = new ItemStack(Material.MAP);
             ItemMeta meta = exit.getItemMeta();
             meta.setCustomModelData(1010);
-            meta.setItemName("§c§lВийти");
+            meta.setItemName("§c§lExit");
             exit.setItemMeta(meta);
             this.inventory.setItem(getSlots()-1, exit);
         }catch (Exception e){
