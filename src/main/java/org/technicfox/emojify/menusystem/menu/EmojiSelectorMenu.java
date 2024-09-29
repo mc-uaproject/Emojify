@@ -29,7 +29,7 @@ public class EmojiSelectorMenu extends Menu {
         }catch (Exception e){
             Bukkit.getLogger().severe("Error loading name of emoji menu: " + e.getMessage());
         }
-        return "Щось пішло не так! Перевірте конфігурацію!";
+        return "Oops! Something went wrong! Please contact the developer.";
     }
 
     @Override
@@ -71,7 +71,7 @@ public class EmojiSelectorMenu extends Menu {
             ItemStack exit = new ItemStack(Material.MAP);
             ItemMeta meta = exit.getItemMeta();
             meta.setCustomModelData(1010);
-            meta.setItemName("§c§lExit");
+            meta.setItemName("§c§lBack");
             exit.setItemMeta(meta);
             this.inventory.setItem(getSlots()-1, exit);
         }catch (Exception e){
