@@ -63,8 +63,8 @@ public class EmojiHomeMenu extends Menu {
     public void setMenuItems() {
         try {
             for (int i = 0; i < getSlots()-1; i++) {
-                this.inventory.setItem(i, getEmoji(Emojify.getConfigUtil().getConfig().getInt("inventories.slot" + i + ".id"),
-                        Emojify.getConfigUtil().getConfig().getString("inventories.slot" + i + ".name"), false));
+                getEmoji(i, Emojify.getConfigUtil().getConfig().getInt("inventories.slot" + i + ".id"),
+                        Emojify.getConfigUtil().getConfig().getString("inventories.slot" + i + ".name"), false);
             }
             ItemStack exit = new ItemStack(Material.MAP);
             ItemMeta meta = exit.getItemMeta();

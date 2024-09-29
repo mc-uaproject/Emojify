@@ -42,7 +42,7 @@ public abstract class Menu implements InventoryHolder {
     }
 
 
-    public ItemStack getEmoji(Integer id, String name, boolean hideTooltip) {
+    public void getEmoji(Integer item, Integer id, String name, boolean hideTooltip) {
         final ItemStack emoji = new ItemStack(Material.WOODEN_AXE);
         ItemMeta ItemMeta = emoji.getItemMeta();
         ItemMeta.setItemName(ChatColor.translateAlternateColorCodes('&', name));
@@ -52,7 +52,7 @@ public abstract class Menu implements InventoryHolder {
         ItemMeta.setCustomModelData(id);
 
         emoji.setItemMeta(ItemMeta);
-        return emoji;
+        this.inventory.setItem(item, emoji);
     }
 
 }
