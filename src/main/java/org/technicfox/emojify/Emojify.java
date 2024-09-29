@@ -18,7 +18,7 @@ public final class Emojify extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-        Bukkit.getLogger().info("Starting Emojifyyyyy by TECHNICFOX");
+        Bukkit.getLogger().info("Starting Emojify by TECHNICFOX");
 
         saveDefaultConfig();
         config = new ConfigUtil(this, "config.yml");
