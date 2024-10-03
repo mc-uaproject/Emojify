@@ -47,6 +47,7 @@ public abstract class Menu implements InventoryHolder {
             final ItemStack emoji = new ItemStack(Material.ENCHANTED_BOOK);
             ItemMeta ItemMeta = emoji.getItemMeta();
             ItemMeta.setItemName(ChatColor.translateAlternateColorCodes('&', name));
+            ItemMeta.setEnchantmentGlintOverride(false);
             if (hideTooltip) {
                 ItemMeta.setHideTooltip(true);
             }

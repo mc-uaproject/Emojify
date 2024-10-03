@@ -50,7 +50,7 @@ public class EmojiSelectorMenu extends Menu {
             new EmojiHomeMenu(Emojify.getPlayerMenuUtility((Player) event.getWhoClicked())).open();
             return;
         }
-        if (!Objects.requireNonNull(event.getCurrentItem()).getType().equals(Material.WOODEN_AXE)) return;
+        if (!Objects.requireNonNull(event.getCurrentItem()).getType().equals(Material.ENCHANTED_BOOK)) return;
         try {
             Toolkit toolkit = Toolkit.getDefaultToolkit();
             Clipboard clipboard = toolkit.getSystemClipboard();

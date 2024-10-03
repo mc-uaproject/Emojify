@@ -1,6 +1,7 @@
 package org.technicfox.emojify.listeners;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -17,7 +18,7 @@ public class PlayerListener implements Listener {
             if (Emojify.getConfigUtil().getConfig().getBoolean("resourcepack.enabled")) {
                 String url = Emojify.getConfigUtil().getConfig().getString("resourcepack.url");
                 byte[] hash = HexFormat.of().parseHex(Emojify.getConfigUtil().getConfig().getString("resourcepack.sha1"));
-                String prompt = Emojify.getConfigUtil().getConfig().getString("resourcepack.prompt");
+                String prompt = ChatColor.translateAlternateColorCodes('&', Emojify.getConfigUtil().getConfig().getString("resourcepack.prompt"));
                 Boolean force = Emojify.getConfigUtil().getConfig().getBoolean("resourcepack.force");
                 event.getPlayer().addResourcePack(UUID.randomUUID(), url, hash, prompt, force);
             }

@@ -48,7 +48,7 @@ public class EmojiHomeMenu extends Menu {
             event.getWhoClicked().closeInventory();
             return;
         }
-        if (!Objects.requireNonNull(event.getCurrentItem()).getType().equals(Material.WOODEN_AXE)) return;
+        if (!Objects.requireNonNull(event.getCurrentItem()).getType().equals(Material.ENCHANTED_BOOK)) return;
         try {
             String data = Emojify.getConfigUtil().getConfig().getString("inventories.slot"+event.getSlot()+".name");
             if (data == null) Bukkit.getLogger().warning("Error loading name of the item in slot " + event.getSlot());
