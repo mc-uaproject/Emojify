@@ -1,3 +1,10 @@
+resourcepack:
+  enabled: true
+  url: "https://download.mc-packs.net/pack/608c8da80220e1ba68666f3e0e8cf422389b086e.zip"
+  sha1: "608c8da80220e1ba68666f3e0e8cf422389b086e"
+  prompt: "DOWNLOAD NOW"
+  force: false
+
 inventories:
   MainMenuConfig:
     invName: "&f七七七七七七七七ㇺ" #Can be used for custom menu. 七 - is a negative space symbol used to align the menu. &f - is a color code (without it your custom menu will be dark).

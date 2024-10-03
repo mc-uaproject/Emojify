@@ -5,6 +5,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.technicfox.emojify.listeners.MenuListener;
+import org.technicfox.emojify.listeners.PlayerListener;
 import org.technicfox.emojify.menusystem.PlayerMenuUtility;
 import org.technicfox.emojify.listeners.CommandListener;
 import org.technicfox.emojify.util.ConfigUtil;
@@ -29,6 +30,7 @@ public final class Emojify extends JavaPlugin implements Listener {
 
         this.getCommand("emojis").setExecutor(new CommandListener());
         getServer().getPluginManager().registerEvents(new MenuListener(), this);
+        getServer().getPluginManager().registerEvents(new PlayerListener(), this);
 
 
     }

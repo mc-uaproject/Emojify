@@ -28,6 +28,7 @@ public class EmojiSelectorMenu extends Menu {
             return name;
         }catch (Exception e){
             Bukkit.getLogger().severe("Error loading name of emoji menu: " + e.getMessage());
+            e.printStackTrace();
         }
         return "Oops! Something went wrong! Please contact the developer.";
     }
@@ -38,6 +39,7 @@ public class EmojiSelectorMenu extends Menu {
             return Emojify.getConfigUtil().getConfig().getInt( "inventories."+this.playerMenuUtility.getEmojiSlot()+".slots");
         }catch (Exception e){
             Bukkit.getLogger().severe("Error loading number of slots in one of emoji menus. Setting to 54: " + e.getMessage());
+            e.printStackTrace();
         }
         return 54;
     }
@@ -58,6 +60,7 @@ public class EmojiSelectorMenu extends Menu {
             event.getWhoClicked().sendMessage(ChatColor.GREEN + "Copied to clipboard!");
         }catch (Exception e){
             Bukkit.getLogger().severe("Error getting emoji in a menu: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -76,6 +79,7 @@ public class EmojiSelectorMenu extends Menu {
             this.inventory.setItem(getSlots()-1, exit);
         }catch (Exception e){
             Bukkit.getLogger().severe("Error loading items in emoji menu: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 

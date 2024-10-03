@@ -44,7 +44,7 @@ public abstract class Menu implements InventoryHolder {
 
     public void getEmoji(Integer item, Integer id, String name, boolean hideTooltip) {
         try {
-            final ItemStack emoji = new ItemStack(Material.WOODEN_AXE);
+            final ItemStack emoji = new ItemStack(Material.ENCHANTED_BOOK);
             ItemMeta ItemMeta = emoji.getItemMeta();
             ItemMeta.setItemName(ChatColor.translateAlternateColorCodes('&', name));
             if (hideTooltip) {
