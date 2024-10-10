@@ -4,14 +4,13 @@ resourcepack:
   sha1: "45b27850908e374ae1fb7feadaa2777bd1216e6c"
   prompt: "&6Please download the Emojify resource pack (without it plugin will not work)"
   force: false
-
+MainMenuConfig:
+  #Can be used for custom menu.
+  #七 - is a negative space symbol used to align the menu.
+  #&f - is a color code (without it your custom menu will be dark).
+  invName: "&f七七七七七七七七ㇺ"
+  slots: 54 #Number of slots in the inventory. IT HAS TO BE A MULTIPLE OF 9.
 inventories:
-  MainMenuConfig:
-    #Can be used for custom menu.
-    #七 - is a negative space symbol used to align the menu.
-    #&f - is a color code (without it your custom menu will be dark).
-    invName: "&f七七七七七七七七ㇺ"
-    slots: 54 #Number of slots in the inventory. IT HAS TO BE A MULTIPLE OF 9.
   slot0:
     name: "&b&lHearts"  #name of the item in the main inventory
     invName: "&f七七七七七七七七ㇺ"

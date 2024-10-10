@@ -22,7 +22,7 @@ public class EmojiHomeMenu extends Menu {
     @Override
     public String getMenuName() {
         try {
-            String name = ChatColor.translateAlternateColorCodes('&', Emojify.getConfigUtil().getConfig().getString("inventories.MainMenuConfig.invName"));
+            String name = ChatColor.translateAlternateColorCodes('&', Emojify.getConfigUtil().getConfig().getString("MainMenuConfig.invName"));
             return name;
         }catch (Exception e){
             Bukkit.getLogger().severe("Error loading name of main menu: " + e.getMessage());
@@ -34,7 +34,7 @@ public class EmojiHomeMenu extends Menu {
     @Override
     public int getSlots() {
         try{
-            return Emojify.getConfigUtil().getConfig().getInt("inventories.MainMenuConfig.slots");
+            return Emojify.getConfigUtil().getConfig().getInt("MainMenuConfig.slots");
         }catch (Exception e){
             Bukkit.getLogger().severe("Error loading number of slots in the main menu. Setting to 54: " + e.getMessage());
             e.printStackTrace();

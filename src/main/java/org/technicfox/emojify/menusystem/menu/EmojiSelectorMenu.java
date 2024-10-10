@@ -1,5 +1,7 @@
 package org.technicfox.emojify.menusystem.menu;
 
+import net.md_5.bungee.api.chat.*;
+import net.md_5.bungee.api.chat.hover.content.Text;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -11,9 +13,8 @@ import org.technicfox.emojify.Emojify;
 import org.technicfox.emojify.menusystem.Menu;
 import org.technicfox.emojify.menusystem.PlayerMenuUtility;
 
-import java.awt.*;
-import java.awt.datatransfer.Clipboard;
-import java.awt.datatransfer.StringSelection;
+import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 
 public class EmojiSelectorMenu extends Menu {
@@ -52,12 +53,16 @@ public class EmojiSelectorMenu extends Menu {
         }
         if (!Objects.requireNonNull(event.getCurrentItem()).getType().equals(Material.ENCHANTED_BOOK)) return;
         try {
-            Toolkit toolkit = Toolkit.getDefaultToolkit();
-            Clipboard clipboard = toolkit.getSystemClipboard();
-            StringSelection strSel = new StringSelection(event.getCurrentItem().getItemMeta().getItemName());
-            clipboard.setContents(strSel, null);
+            String name = event.getCurrentItem().getItemMeta().getItemName();
+            Player player = (Player) event.getWhoClicked();
+
+            TextComponent messege = new TextComponent(ChatColor.translateAlternateColorCodes('&', "&a&l&nClick me to copy emoji:&r ") + name);
+
+            messege.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(ChatColor.translateAlternateColorCodes('&', "&a&l&nClick me to copy emoji:&r ") + name)));
+            messege.setClickEvent(new ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, name));
+            player.spigot().sendMessage(messege);
+
             event.getWhoClicked().closeInventory();
-            event.getWhoClicked().sendMessage(ChatColor.GREEN + "Copied to clipboard!");
         }catch (Exception e){
             Bukkit.getLogger().severe("Error getting emoji in a menu: " + e.getMessage());
             e.printStackTrace();
