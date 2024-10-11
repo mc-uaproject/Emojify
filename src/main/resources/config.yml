@@ -1,7 +1,7 @@
 resourcepack:
   enabled: true
   url: "https://github.com/TechnicFox/Emojify/raw/refs/heads/master/data/Emojify.zip" #url to the resource pack
-  sha1: "9afb38b797343c2ccff7c0e6ca0098865f02e06f" #sha1 hash of the resource pack
+  sha1: "4c67b62f00ceccf5d3806126417d41559653eb9e" #sha1 hash of the resource pack
   prompt: "&6Please download the Emojify resource pack (without it plugin will not work)" #prompt when player joins the server
   force: false #force the resource pack
 MainMenuConfig:
