@@ -1,9 +1,9 @@
 resourcepack:
   enabled: true
-  url: "https://github.com/TechnicFox/Emojify/raw/refs/heads/master/data/Emojify.zip"
-  sha1: "45b27850908e374ae1fb7feadaa2777bd1216e6c"
-  prompt: "&6Please download the Emojify resource pack (without it plugin will not work)"
-  force: false
+  url: "https://github.com/TechnicFox/Emojify/raw/refs/heads/master/data/Emojify.zip" #url to the resource pack
+  sha1: "45b27850908e374ae1fb7feadaa2777bd1216e6c" #sha1 hash of the resource pack
+  prompt: "&6Please download the Emojify resource pack (without it plugin will not work)" #prompt when player joins the server
+  force: false #force the resource pack
 MainMenuConfig:
   #Can be used for custom menu.
   #七 - is a negative space symbol used to align the menu.

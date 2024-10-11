@@ -7,6 +7,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.technicfox.emojify.Emojify;
 
+import java.util.UUID;
+
 public class PlayerListener implements Listener {
 
     @EventHandler
@@ -21,7 +23,7 @@ public class PlayerListener implements Listener {
                 }
                 String prompt = ChatColor.translateAlternateColorCodes('&', Emojify.getConfigUtil().getConfig().getString("resourcepack.prompt"));
                 Boolean force = Emojify.getConfigUtil().getConfig().getBoolean("resourcepack.force");
-                event.getPlayer().setResourcePack(url, bytes, prompt, force);
+                event.getPlayer().addResourcePack(UUID.randomUUID(),url, bytes, prompt, force);
             }
         } catch (Exception e) {
             Bukkit.getLogger().severe("Error loading resource pack: " + e.getMessage());
