@@ -7,5 +7,5 @@ description: Panel for emojis
 commands:
   emojis:
     description: Panel for emojis
-    usage: /emojis
-    aliases: [emo, emoji, em]
+    usage: /emoji
+    aliases: [emo, em]
