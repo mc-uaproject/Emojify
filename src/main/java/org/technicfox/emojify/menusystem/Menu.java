@@ -1,14 +1,16 @@
 package org.technicfox.emojify.menusystem;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Material;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
-import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.jetbrains.annotations.NotNull;
+
+import static org.bukkit.Bukkit.createInventory;
 
 public abstract class Menu implements InventoryHolder {
 
@@ -21,7 +23,7 @@ public abstract class Menu implements InventoryHolder {
         this.playerMenuUtility = playerMenuUtility;
     }
 
-    public abstract String getMenuName();
+    public abstract Component getMenuName();
 
     public abstract int getSlots();
 
@@ -30,7 +32,7 @@ public abstract class Menu implements InventoryHolder {
     public abstract void setMenuItems();
 
     public void open() {
-        inventory = Bukkit.createInventory(this, getSlots(), getMenuName());
+        inventory = createInventory(this, this.getSlots(), this.getMenuName());
 
         this.setMenuItems();
 
@@ -38,7 +40,7 @@ public abstract class Menu implements InventoryHolder {
     }
 
     @Override
-    public Inventory getInventory() {
+    public @NotNull Inventory getInventory() {
         return inventory;
     }
 
@@ -46,15 +48,18 @@ public abstract class Menu implements InventoryHolder {
     public void getEmoji(Integer item, Integer id, String name, boolean hideTooltip) {
         try {
             final ItemStack emoji = new ItemStack(Material.ENCHANTED_BOOK);
-            ItemMeta ItemMeta = emoji.getItemMeta();
-            ItemMeta.setItemName(ChatColor.translateAlternateColorCodes('&', name));
-            ItemMeta.setEnchantmentGlintOverride(false);
-            if (hideTooltip) {
-                ItemMeta.setHideTooltip(true);
-            }
-            ItemMeta.setCustomModelData(id);
+            ItemMeta itemMeta = emoji.getItemMeta();
 
-            emoji.setItemMeta(ItemMeta);
+            var mm = MiniMessage.miniMessage();
+
+            itemMeta.itemName(mm.deserialize(name));
+            itemMeta.setEnchantmentGlintOverride(false);
+            if (hideTooltip) {
+                itemMeta.setHideTooltip(true);
+            }
+            itemMeta.setCustomModelData(id);
+
+            emoji.setItemMeta(itemMeta);
             this.inventory.setItem(item, emoji);
         } catch (Exception ignored) {}
     }

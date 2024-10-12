@@ -2,18 +2,17 @@ resourcepack:
   enabled: true
   url: "https://github.com/TechnicFox/Emojify/raw/refs/heads/master/data/Emojify.zip" #url to the resource pack
   sha1: "4c67b62f00ceccf5d3806126417d41559653eb9e" #sha1 hash of the resource pack
-  prompt: "&6Please download the Emojify resource pack (without it plugin will not work)" #prompt when player joins the server
+  prompt: "<gold>Please download the Emojify resource pack (without it plugin will not work)</gold>" #prompt when player joins the server
   force: false #force the resource pack
 MainMenuConfig:
   #Can be used for custom menu.
   #七 - is a negative space symbol used to align the menu.
-  #&f - is a color code (without it your custom menu will be dark).
-  invName: "&f七七七七七七七七ㇺ"
+  invName: "七七七七七七七七ㇺ"
   slots: 54 #Number of slots in the inventory. IT HAS TO BE A MULTIPLE OF 9.
 inventories:
   slot0:
-    name: "&b&lHearts"  #name of the item in the main inventory
-    invName: "&f七七七七七七七七ㇺ"
+    name: "<aqua><bold>Hearts</bold></aqua>"  #name of the item in the main inventory
+    invName: "七七七七七七七七ㇺ"
     slots: 54
     id: 101 #id of the custom item
 

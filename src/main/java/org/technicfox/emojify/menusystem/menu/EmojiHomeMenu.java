@@ -1,7 +1,8 @@
 package org.technicfox.emojify.menusystem.menu;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
+import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -20,15 +21,14 @@ public class EmojiHomeMenu extends Menu {
     }
 
     @Override
-    public String getMenuName() {
+    public Component getMenuName() {
         try {
-            String name = ChatColor.translateAlternateColorCodes('&', Emojify.getConfigUtil().getConfig().getString("MainMenuConfig.invName"));
-            return name;
+            return Component.text(Emojify.getConfigUtil().getConfig().getString("MainMenuConfig.invName")).color(NamedTextColor.WHITE);
         }catch (Exception e){
-            Bukkit.getLogger().severe("Error loading name of main menu: " + e.getMessage());
+            Emojify.getLoggerEmojify().severe("Error loading name of emoji menu: " + e.getMessage());
             e.printStackTrace();
+            return Component.text("Oops! Something went wrong! Please contact the developer.");
         }
-        return "Oops! Something went wrong! Please contact the developer.";
     }
 
     @Override
@@ -36,7 +36,7 @@ public class EmojiHomeMenu extends Menu {
         try{
             return Emojify.getConfigUtil().getConfig().getInt("MainMenuConfig.slots");
         }catch (Exception e){
-            Bukkit.getLogger().severe("Error loading number of slots in the main menu. Setting to 54: " + e.getMessage());
+            Emojify.getLoggerEmojify().severe("Error loading number of slots in the main menu. Setting to 54: " + e.getMessage());
             e.printStackTrace();
         }
         return 54;
@@ -51,12 +51,12 @@ public class EmojiHomeMenu extends Menu {
         if (!Objects.requireNonNull(event.getCurrentItem()).getType().equals(Material.ENCHANTED_BOOK)) return;
         try {
             String data = Emojify.getConfigUtil().getConfig().getString("inventories.slot"+event.getSlot()+".name");
-            if (data == null) Bukkit.getLogger().warning("Error loading name of the item in slot " + event.getSlot());
+            if (data == null) Emojify.getLoggerEmojify().warning("Error loading name of the item in slot " + event.getSlot());
             Emojify.getPlayerMenuUtility((Player) event.getWhoClicked()).setEmojiSlot("slot"+event.getSlot());
             new EmojiSelectorMenu(Emojify.getPlayerMenuUtility((Player) event.getWhoClicked())).open();
 
         }catch (Exception e){
-            Bukkit.getLogger().severe("Error loading name of main menu: " + e.getMessage());
+            Emojify.getLoggerEmojify().severe("Error loading name of main menu: " + e.getMessage());
             e.printStackTrace();
         }
 
@@ -72,11 +72,11 @@ public class EmojiHomeMenu extends Menu {
             ItemStack exit = new ItemStack(Material.MAP);
             ItemMeta meta = exit.getItemMeta();
             meta.setCustomModelData(1010);
-            meta.setItemName("§c§lExit");
+            meta.itemName(Component.text("Exit").color(NamedTextColor.RED).decorate(TextDecoration.BOLD));
             exit.setItemMeta(meta);
             this.inventory.setItem(getSlots()-1, exit);
         }catch (Exception e){
-            Bukkit.getLogger().severe("Error loading items in main menu: " + e.getMessage());
+            Emojify.getLoggerEmojify().severe("Error loading items in main menu: " + e.getMessage());
             e.printStackTrace();
         }
     }

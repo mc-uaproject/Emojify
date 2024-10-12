@@ -1,11 +1,11 @@
 name: Emojify
-version: ${project.version}
+version: 1.0
 main: org.technicfox.emojify.Emojify
 api-version: '1.21'
 author: TechnicFox
 description: Panel for emojis
 commands:
-  emojis:
+  emoji:
     description: Panel for emojis
     usage: /emoji
     aliases: [emo, em]

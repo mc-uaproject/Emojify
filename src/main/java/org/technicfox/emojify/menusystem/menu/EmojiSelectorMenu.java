@@ -1,9 +1,12 @@
 package org.technicfox.emojify.menusystem.menu;
 
-import net.md_5.bungee.api.chat.*;
-import net.md_5.bungee.api.chat.hover.content.Text;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.event.ClickEvent;
+import net.kyori.adventure.text.event.HoverEvent;
+import net.kyori.adventure.text.format.NamedTextColor;
+import net.kyori.adventure.text.format.TextDecoration;
+import net.kyori.adventure.text.minimessage.MiniMessage;
+import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -13,8 +16,6 @@ import org.technicfox.emojify.Emojify;
 import org.technicfox.emojify.menusystem.Menu;
 import org.technicfox.emojify.menusystem.PlayerMenuUtility;
 
-import java.util.Collection;
-import java.util.List;
 import java.util.Objects;
 
 public class EmojiSelectorMenu extends Menu {
@@ -23,15 +24,14 @@ public class EmojiSelectorMenu extends Menu {
     }
 
     @Override
-    public String getMenuName() {
+    public Component getMenuName() {
         try {
-            String name = ChatColor.translateAlternateColorCodes('&', Emojify.getConfigUtil().getConfig().getString("inventories."+this.playerMenuUtility.getEmojiSlot()+".invName"));
-            return name;
-        }catch (Exception e){
-            Bukkit.getLogger().severe("Error loading name of emoji menu: " + e.getMessage());
+            return Component.text(Emojify.getConfigUtil().getConfig().getString("inventories."+ this.playerMenuUtility.getEmojiSlot()+".invName")).color(NamedTextColor.WHITE);
+        }catch (Exception e) {
+            Emojify.getLoggerEmojify().severe("Error loading name of emoji menu: " + e.getMessage());
             e.printStackTrace();
+            return Component.text("Oops! Something went wrong! Please contact the developer.");
         }
-        return "Oops! Something went wrong! Please contact the developer.";
     }
 
     @Override
@@ -39,7 +39,7 @@ public class EmojiSelectorMenu extends Menu {
         try{
             return Emojify.getConfigUtil().getConfig().getInt( "inventories."+this.playerMenuUtility.getEmojiSlot()+".slots");
         }catch (Exception e){
-            Bukkit.getLogger().severe("Error loading number of slots in one of emoji menus. Setting to 54: " + e.getMessage());
+            Emojify.getLoggerEmojify().severe("Error loading number of slots in one of emoji menus. Setting to 54: " + e.getMessage());
             e.printStackTrace();
         }
         return 54;
@@ -53,18 +53,19 @@ public class EmojiSelectorMenu extends Menu {
         }
         if (!Objects.requireNonNull(event.getCurrentItem()).getType().equals(Material.ENCHANTED_BOOK)) return;
         try {
-            String name = event.getCurrentItem().getItemMeta().getItemName();
+            String name =  PlainTextComponentSerializer.plainText().serialize(event.getCurrentItem().getItemMeta().itemName());
+
             Player player = (Player) event.getWhoClicked();
+            var mm = MiniMessage.miniMessage();
+            Component message = mm.deserialize("<b><u><green>Click me to copy emoji:</green></u></b>"+" "+name);
+            message = message.hoverEvent(HoverEvent.showText(message));
+            message = message.clickEvent(ClickEvent.copyToClipboard(name));
 
-            TextComponent messege = new TextComponent(ChatColor.translateAlternateColorCodes('&', "&a&l&nClick me to copy emoji:&r ") + name);
-
-            messege.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(ChatColor.translateAlternateColorCodes('&', "&a&l&nClick me to copy emoji:&r ") + name)));
-            messege.setClickEvent(new ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, name));
-            player.spigot().sendMessage(messege);
+            player.sendMessage(message);
 
             event.getWhoClicked().closeInventory();
         }catch (Exception e){
-            Bukkit.getLogger().severe("Error getting emoji in a menu: " + e.getMessage());
+            Emojify.getLoggerEmojify().severe("Error getting emoji in a menu: " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -79,11 +80,11 @@ public class EmojiSelectorMenu extends Menu {
             ItemStack exit = new ItemStack(Material.MAP);
             ItemMeta meta = exit.getItemMeta();
             meta.setCustomModelData(1010);
-            meta.setItemName("§c§lBack");
+            meta.itemName(Component.text("Exit").color(NamedTextColor.RED).decorate(TextDecoration.BOLD));
             exit.setItemMeta(meta);
             this.inventory.setItem(getSlots()-1, exit);
         }catch (Exception e){
-            Bukkit.getLogger().severe("Error loading items in emoji menu: " + e.getMessage());
+            Emojify.getLoggerEmojify().severe("Error loading items in emoji menu: " + e.getMessage());
             e.printStackTrace();
         }
     }

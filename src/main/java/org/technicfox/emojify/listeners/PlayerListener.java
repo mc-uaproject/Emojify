@@ -1,7 +1,8 @@
 package org.technicfox.emojify.listeners;
 
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -21,12 +22,13 @@ public class PlayerListener implements Listener {
                 for (int i = 0; i < input.length(); i += 2) {
                     bytes[i / 2] = (byte) Integer.parseInt(input.substring(i, i + 2), 16);
                 }
-                String prompt = ChatColor.translateAlternateColorCodes('&', Emojify.getConfigUtil().getConfig().getString("resourcepack.prompt"));
-                Boolean force = Emojify.getConfigUtil().getConfig().getBoolean("resourcepack.force");
-                event.getPlayer().addResourcePack(UUID.randomUUID(),url, bytes, prompt, force);
+                var mm = MiniMessage.miniMessage();
+                Component prompt = mm.deserialize(Emojify.getConfigUtil().getConfig().getString("resourcepack.prompt"));
+                boolean force = Emojify.getConfigUtil().getConfig().getBoolean("resourcepack.force");
+                event.getPlayer().setResourcePack(url, bytes, prompt, force);
             }
         } catch (Exception e) {
-            Bukkit.getLogger().severe("Error loading resource pack: " + e.getMessage());
+            Emojify.getLoggerEmojify().severe("Error loading resource pack: " + e.getMessage());
             e.printStackTrace();
         }
     }

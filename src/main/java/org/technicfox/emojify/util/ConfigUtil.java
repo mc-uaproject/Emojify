@@ -1,9 +1,9 @@
 package org.technicfox.emojify.util;
 
-import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
+import org.technicfox.emojify.Emojify;
 
 import java.io.File;
 
@@ -24,7 +24,7 @@ public class ConfigUtil {
         try {
             this.config.save(this.file);
         } catch (Exception e){
-            Bukkit.getLogger().warning("Error saving config: " + e.getMessage());
+            Emojify.getLoggerEmojify().warning("Error saving config: " + e.getMessage());
         }
     }
 
