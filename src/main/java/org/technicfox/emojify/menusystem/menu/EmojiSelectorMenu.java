@@ -4,6 +4,8 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.event.ClickEvent;
 import net.kyori.adventure.text.event.HoverEvent;
 import net.kyori.adventure.text.format.NamedTextColor;
+import net.kyori.adventure.text.format.Style;
+import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
@@ -19,6 +21,9 @@ import org.technicfox.emojify.menusystem.PlayerMenuUtility;
 import java.util.Objects;
 
 public class EmojiSelectorMenu extends Menu {
+    private static final int DEFAULT_SLOTS = 54;
+    private final MiniMessage miniMessage = MiniMessage.miniMessage();
+
     public EmojiSelectorMenu(PlayerMenuUtility playerMenuUtility) {
         super(playerMenuUtility);
     }
@@ -30,7 +35,7 @@ public class EmojiSelectorMenu extends Menu {
         }catch (Exception e) {
             Emojify.getLoggerEmojify().severe("Error loading name of emoji menu: " + e.getMessage());
             e.printStackTrace();
-            return Component.text("Oops! Something went wrong! Please contact the developer.");
+            return Emojify.getLangConfigUtil().getConfig().getComponent("Error.MenuName", miniMessage);
         }
     }
 
@@ -38,11 +43,11 @@ public class EmojiSelectorMenu extends Menu {
     public int getSlots() {
         try{
             return Emojify.getConfigUtil().getConfig().getInt( "inventories."+this.playerMenuUtility.getEmojiSlot()+".slots");
-        }catch (Exception e){
-            Emojify.getLoggerEmojify().severe("Error loading number of slots in one of emoji menus. Setting to 54: " + e.getMessage());
+        }catch (Exception e) {
+            Emojify.getLoggerEmojify().severe("Error loading number of slots in one of emoji menus: " + e.getMessage());
             e.printStackTrace();
+            return DEFAULT_SLOTS;
         }
-        return 54;
     }
 
     @Override
@@ -56,8 +61,10 @@ public class EmojiSelectorMenu extends Menu {
             String name =  PlainTextComponentSerializer.plainText().serialize(event.getCurrentItem().getItemMeta().itemName());
 
             Player player = (Player) event.getWhoClicked();
-            var mm = MiniMessage.miniMessage();
-            Component message = mm.deserialize("<b><u><green>Click me to copy emoji:</green></u></b>"+" "+name);
+            Component message = Emojify.getLangConfigUtil().getConfig().getComponent("Item.CopyToClipboard", miniMessage)
+                    .append(Component.text(" "+name).color(NamedTextColor.WHITE)
+                            .decoration(TextDecoration.BOLD,TextDecoration.State.FALSE)
+                            .decoration(TextDecoration.UNDERLINED,TextDecoration.State.FALSE));
             message = message.hoverEvent(HoverEvent.showText(message));
             message = message.clickEvent(ClickEvent.copyToClipboard(name));
 
@@ -80,7 +87,7 @@ public class EmojiSelectorMenu extends Menu {
             ItemStack exit = new ItemStack(Material.MAP);
             ItemMeta meta = exit.getItemMeta();
             meta.setCustomModelData(1010);
-            meta.itemName(Component.text("Exit").color(NamedTextColor.RED).decorate(TextDecoration.BOLD));
+            meta.itemName(Emojify.getLangConfigUtil().getConfig().getComponent("Item.Exit", miniMessage));
             exit.setItemMeta(meta);
             this.inventory.setItem(getSlots()-1, exit);
         }catch (Exception e){

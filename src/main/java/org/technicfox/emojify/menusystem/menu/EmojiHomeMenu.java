@@ -2,7 +2,7 @@ package org.technicfox.emojify.menusystem.menu;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
-import net.kyori.adventure.text.format.TextDecoration;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -15,7 +15,8 @@ import org.technicfox.emojify.menusystem.PlayerMenuUtility;
 import java.util.Objects;
 
 public class EmojiHomeMenu extends Menu {
-
+    private static final int DEFAULT_SLOTS = 54;
+    private final MiniMessage miniMessage = MiniMessage.miniMessage();
     public EmojiHomeMenu(PlayerMenuUtility playerMenuUtility) {
         super(playerMenuUtility);
     }
@@ -23,23 +24,23 @@ public class EmojiHomeMenu extends Menu {
     @Override
     public Component getMenuName() {
         try {
-            return Component.text(Emojify.getConfigUtil().getConfig().getString("MainMenuConfig.invName")).color(NamedTextColor.WHITE);
+            return Component.text(Emojify.getConfigUtil().getConfig().getString("MainConfig.invName")).color(NamedTextColor.WHITE);
         }catch (Exception e){
             Emojify.getLoggerEmojify().severe("Error loading name of emoji menu: " + e.getMessage());
             e.printStackTrace();
-            return Component.text("Oops! Something went wrong! Please contact the developer.");
+            return Emojify.getLangConfigUtil().getConfig().getComponent("Error.MenuName", miniMessage);
         }
     }
 
     @Override
     public int getSlots() {
         try{
-            return Emojify.getConfigUtil().getConfig().getInt("MainMenuConfig.slots");
+            return Emojify.getConfigUtil().getConfig().getInt("MainConfig.slots");
         }catch (Exception e){
-            Emojify.getLoggerEmojify().severe("Error loading number of slots in the main menu. Setting to 54: " + e.getMessage());
+            Emojify.getLoggerEmojify().severe("Error loading number of slots in the main menu: " + e.getMessage());
             e.printStackTrace();
+            return DEFAULT_SLOTS;
         }
-        return 54;
     }
 
     @Override
@@ -50,8 +51,6 @@ public class EmojiHomeMenu extends Menu {
         }
         if (!Objects.requireNonNull(event.getCurrentItem()).getType().equals(Material.ENCHANTED_BOOK)) return;
         try {
-            String data = Emojify.getConfigUtil().getConfig().getString("inventories.slot"+event.getSlot()+".name");
-            if (data == null) Emojify.getLoggerEmojify().warning("Error loading name of the item in slot " + event.getSlot());
             Emojify.getPlayerMenuUtility((Player) event.getWhoClicked()).setEmojiSlot("slot"+event.getSlot());
             new EmojiSelectorMenu(Emojify.getPlayerMenuUtility((Player) event.getWhoClicked())).open();
 
@@ -72,7 +71,7 @@ public class EmojiHomeMenu extends Menu {
             ItemStack exit = new ItemStack(Material.MAP);
             ItemMeta meta = exit.getItemMeta();
             meta.setCustomModelData(1010);
-            meta.itemName(Component.text("Exit").color(NamedTextColor.RED).decorate(TextDecoration.BOLD));
+            meta.itemName(Emojify.getLangConfigUtil().getConfig().getComponent("Item.Exit", miniMessage));
             exit.setItemMeta(meta);
             this.inventory.setItem(getSlots()-1, exit);
         }catch (Exception e){

@@ -4,11 +4,12 @@ resourcepack:
   sha1: "4c67b62f00ceccf5d3806126417d41559653eb9e" #sha1 hash of the resource pack
   prompt: "<gold>Please download the Emojify resource pack (without it plugin will not work)</gold>" #prompt when player joins the server
   force: false #force the resource pack
-MainMenuConfig:
+MainConfig:
   #Can be used for custom menu.
   #七 - is a negative space symbol used to align the menu.
   invName: "七七七七七七七七ㇺ"
   slots: 54 #Number of slots in the inventory. IT HAS TO BE A MULTIPLE OF 9.
+  lang: "uk_ua"
 inventories:
   slot0:
     name: "<aqua><bold>Hearts</bold></aqua>"  #name of the item in the main inventory

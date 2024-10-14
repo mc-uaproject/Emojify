@@ -1,0 +1,6 @@
+Error:
+  MenuName: "Oops! Something went wrong! Please contact the developer."
+  PlayerOnlyCommand: "Only players can use this command!"
+Item:
+  Exit: "<b><red>Exit</red></b>"
+  CopyToClipboard: "<b><u><green>Click me to copy emoji:</green></u></b>"

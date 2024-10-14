@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 
 public final class Emojify extends JavaPlugin implements Listener {
     private static ConfigUtil config;
+    private static ConfigUtil langConfig;
     private static final HashMap<Player, PlayerMenuUtility> playerMenuUtilityMap = new HashMap<>();
     private static Logger logger;
 
@@ -22,16 +23,9 @@ public final class Emojify extends JavaPlugin implements Listener {
     public void onEnable() {
         logger = getLogger();
 
-        logger.info("Starting Emojify by TECHNICFOX");
-
-        getConfig().options().copyDefaults();
-        saveDefaultConfig();
-
-        config = new ConfigUtil(this, "config.yml");
-        if (!config.getFile().exists()) {
-            config.getConfig().setDefaults(getConfig().getDefaults());
-            config.save();
-        }
+        logger.info("Starting Emojify by UAP");
+        config = new ConfigUtil(this, getDataFolder(), "config", true, true);
+        langConfig = new ConfigUtil(this, getDataFolder(), config.getConfig().getString("MainConfig.lang", "en_us"), true, true);
 
         this.getCommand("emoji").setExecutor(new CommandListener());
         getServer().getPluginManager().registerEvents(new MenuListener(), this);
@@ -61,5 +55,6 @@ public final class Emojify extends JavaPlugin implements Listener {
     public static ConfigUtil getConfigUtil(){
         return config;
     }
+    public static ConfigUtil getLangConfigUtil(){return langConfig;}
     public static Logger getLoggerEmojify(){return logger;}
 }

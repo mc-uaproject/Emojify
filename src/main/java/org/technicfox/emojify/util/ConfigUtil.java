@@ -2,37 +2,73 @@ package org.technicfox.emojify.util;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.plugin.Plugin;
-import org.technicfox.emojify.Emojify;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 
 public class ConfigUtil {
-    private final File file;
-    private final FileConfiguration config;
 
-    public ConfigUtil(Plugin plugin, String path) {
-        this(plugin.getDataFolder().getAbsolutePath()+"/"+path);
+    protected final boolean createIfNotExist, resource;
+    protected final JavaPlugin plugin;
+
+    protected FileConfiguration config;
+    protected File file, path;
+    protected String name;
+
+    public ConfigUtil(JavaPlugin instance, File path, String name, boolean createIfNotExist, boolean resource) {
+        this.plugin = instance;
+        this.path = path;
+        this.name = name + ".yml";
+        this.createIfNotExist = createIfNotExist;
+        this.resource = resource;
+        create();
     }
 
-    public ConfigUtil(String path) {
-        this.file = new File(path);
-        this.config = YamlConfiguration.loadConfiguration(this.file);
+    public ConfigUtil(JavaPlugin instance, String path, String name, boolean createIfNotExist, boolean resource) {
+        this(instance, new File(path), name, createIfNotExist, resource);
     }
 
-    public void save(){
+    public FileConfiguration getConfig() {
+        return config;
+    }
+
+    public void save() {
         try {
-            this.config.save(this.file);
-        } catch (Exception e){
-            Emojify.getLoggerEmojify().warning("Error saving config: " + e.getMessage());
+            config.save(file);
+        } catch (Exception exc) {
+            exc.printStackTrace();
         }
     }
 
-    public File getFile() {
-        return this.file;
+    public File reloadFile() {
+        file = new File(path, name);
+        return file;
     }
 
-    public FileConfiguration getConfig(){
-        return this.config;
+    public FileConfiguration reloadConfig() {
+        config = YamlConfiguration.loadConfiguration(file);
+        return config;
+    }
+
+    public void reload() {
+        reloadFile();
+        reloadConfig();
+    }
+
+    public void create() {
+        reload();
+        if (!createIfNotExist || file.exists()) {
+            return;
+        }
+        file.getParentFile().mkdirs();
+        if (resource) {
+            plugin.saveResource(name, false);
+        } else {
+            try {
+                file.createNewFile();
+            } catch (Exception exc) {
+                exc.printStackTrace();
+            }
+        }
     }
 }
