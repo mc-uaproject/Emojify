@@ -56,7 +56,9 @@ public class ConfigUtil {
     }
 
     public void create() {
-        reload();
+        if (file == null) {
+            reloadFile();
+        }
         if (!createIfNotExist || file.exists()) {
             return;
         }
@@ -70,5 +72,6 @@ public class ConfigUtil {
                 exc.printStackTrace();
             }
         }
+        reloadConfig();
     }
 }
