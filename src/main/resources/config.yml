@@ -12,13 +12,13 @@ MainConfig:
   lang: "uk_ua"
 inventories:
   slot0:
-    name: "<aqua><bold>Hearts</bold></aqua>"  #name of the item in the main inventory
+    name: "<aqua><bold>Smiles</bold></aqua>"  #name of the item in the main inventory
     invName: "七七七七七七七七ㇺ"
     slots: 54
-    id: 101 #id of the custom item
+    id: 1 #id of the custom item
   slot1:
     name: "<aqua><bold>Hearts</bold></aqua>"
-    invName: "&f七七七七七七七七ㇺ"
+    invName: "七七七七七七七七ㇺ"
     slots: 54
     id: 101
   slot2:
@@ -44,38 +44,23 @@ inventories:
 
 slot0:
   slot0:
-    name: "媀" #custom character that can be changed into an emoji
-    id: 101 #id of the custom item
+    name: "⿅" #custom character that can be changed into an emoji
+    id: 1 #id of the custom item
   slot1:
-    name: "鬣"
-    id: 102
+    name: "⽷"
+    id: 2
   slot2:
-    name: "觮"
-    id: 103
+    name: "诮"
+    id: 3
   slot3:
-    name: "継"
-    id: 104
+    name: "挷"
+    id: 4
   slot4:
-    name: "佃"
-    id: 105
+    name: "瘛"
+    id: 5
   slot5:
-    name: "青"
-    id: 106
-  slot6:
-    name: "橙"
-    id: 107
-  slot7:
-    name: "紫"
-    id: 108
-  slot8:
-    name: "梾"
-    id: 109
-  slot9:
-    name: "白"
-    id: 110
-  slot10:
-    name: "黒"
-    id: 111
+    name: "曻"
+    id: 6
 
 
 slot1:
