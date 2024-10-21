@@ -46,22 +46,20 @@ public abstract class Menu implements InventoryHolder {
 
 
     public void getEmoji(Integer item, Integer id, String name, boolean hideTooltip) {
-        try {
-            final ItemStack emoji = new ItemStack(Material.ENCHANTED_BOOK);
-            ItemMeta itemMeta = emoji.getItemMeta();
+        ItemStack emoji = new ItemStack(Material.ENCHANTED_BOOK);
+        ItemMeta itemMeta = emoji.getItemMeta();
 
-            var mm = MiniMessage.miniMessage();
+        var mm = MiniMessage.miniMessage();
 
-            itemMeta.itemName(mm.deserialize(name));
-            itemMeta.setEnchantmentGlintOverride(false);
-            if (hideTooltip) {
-                itemMeta.setHideTooltip(true);
-            }
-            itemMeta.setCustomModelData(id);
+        itemMeta.itemName(mm.deserialize(name));
+        itemMeta.setEnchantmentGlintOverride(false);
+        if (hideTooltip) {
+            itemMeta.setHideTooltip(true);
+        }
+        itemMeta.setCustomModelData(id);
 
-            emoji.setItemMeta(itemMeta);
-            this.inventory.setItem(item, emoji);
-        } catch (Exception ignored) {}
+        emoji.setItemMeta(itemMeta);
+        this.inventory.setItem(item, emoji);
     }
 
 }

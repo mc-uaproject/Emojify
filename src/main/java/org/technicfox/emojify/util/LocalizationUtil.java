@@ -1,6 +1,7 @@
 package org.technicfox.emojify.util;
 
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.technicfox.emojify.Emojify;
 
 import java.io.File;
 import java.util.HashMap;
@@ -11,7 +12,7 @@ public class LocalizationUtil {
     private static final String DEFAULT_LANG = "en_us";
     private static final Map<String, YamlConfiguration> LANGUAGES = new HashMap<>();
     private final File langFolder;
-    private final Logger logger = Logger.getLogger("Emojify");
+    private final Logger logger = Emojify.getEmojifyLogger();
     private String currentLang = DEFAULT_LANG;
 
     public LocalizationUtil(File langFolder) {
