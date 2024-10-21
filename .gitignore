@@ -31,7 +31,6 @@ run
 *.war
 *.nar
 *.ear
-*.zip
 *.tar.gz
 *.rar
 
